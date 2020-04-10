@@ -1,22 +1,23 @@
+# Lista palabras comunes
 
+comunes = ["hola", "palabras", "diccionario", "fuerza"]
+
+listaFinal = []
 # Leer un documento en todas las lineas
 with open("source\prueba.txt", "r") as f:
+    # Lista de palabras extraidas del documento
     lista0 = [linea.strip() for linea in f]
     for line in f:
-        # print(line.split())
         lista0.append(line.split())
-        # print(line)
+        
 print(lista0)
-
+# Lista con otras listas por linea de palabras en el documento
 lista1 = []
-# lista0 = ['Hola mundo', 'Iteracion diccionario palabras', "Fuerza perseverancia"]
 
 # Imprime el numero por indices de la lista 
 for i in range(len(lista0)):
     lista1.append(lista0[i].split())
-# lista1.append(lista0[0].split())
-# lista1.append(lista0[1].split())
-# lista1.append(lista0[2].split())
+
 print(lista1)
 # Hay que iterar sobre dos indices, el de la lista y el de las listas dentro de la lista pricipal. ej, 
 # lista1[0][1]
@@ -28,4 +29,13 @@ for elements in range(len(lista1)):
     lts = int(elements)
     for i in range(len(lista1[lts])):
         ent = int(i)
-        print(lista1[lts][ent])
+        # Esta salida hay que agregarla a la lista final
+        # Crear un bucle de comprobacion
+        # Si la palabra esta en la lista "comunes", entonces ignorar, sino añadir a la lista final
+        # print(lista1[lts][ent])
+        if lista1[lts][ent].lower() in comunes:
+            print("Palabra repetida" + " " + lista1[lts][ent].lower())
+        else:
+            listaFinal.append(lista1[lts][ent])
+        
+print(listaFinal)
