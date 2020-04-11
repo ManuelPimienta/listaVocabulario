@@ -9,20 +9,20 @@ soup = BeautifulSoup(page.content, "html.parser")
 # sopa = BeautifulSoup("<li><a href=\"https://es.wiktionary.org/wiki/humano\" title=\"humano\">humano</a></li>")
 listaPalabrasComunes = []
 # results = soup.ul.li.a
-for elements in soup:
-    # results = soup.li.a
-    print(soup.find_all('a')) 
+# for elements in soup:
+#     # results = soup.li.a
+#     print(soup.find_all('a')) 
 for link in soup.find_all('a'):
     listaPalabrasComunes.append(link.get('title'))
 
-with open("source\palabrasComunes.txt", "w") as f:
+# Escribir la lista en un archivo de texto
+with open("source\palabrasComunes.txt", "w", encoding="utf-8") as f:
     for i in listaPalabrasComunes:
-        f.write(i)
-    
-# f.close()
-# f = open("source\palabrasComunes.txt", "w+")
-# for i in palabrasComunes:
-#         f.write(i)
+        if type(i) != str:
+            pass
+        else:
+            f.write(i + "\n")
 f.close()
+
 
 print(listaPalabrasComunes)
