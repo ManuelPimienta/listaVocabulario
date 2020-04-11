@@ -2,14 +2,14 @@
 Script para crear una lista de palabras a partir de un documento.
 
 ## TO-DO
+Muchas palabras conocidas en la salida final
 
 Esquemas - pseudo-código
 
-    Crear una lista de palabras comunes
-    Abrir el documento
-    Buscar y crear una lista de las palabras
+    Abrir el documento a sacar palabras
     Comprar las palablas del documento con las palablas comunes
     Imprimir en un documento las palabras
 
 Otros - 
-Crear lista de palabras comunes
+Crear lista de palabras comunes y guardarlas en un archivo [x]
+En la lista de palabras conocidas algunas palabras estan en singular.

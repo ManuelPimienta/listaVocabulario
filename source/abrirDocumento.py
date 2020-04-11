@@ -1,20 +1,28 @@
 # Programa para crear una lista de palabras desconocidas
 
 ### TO-DO
-# 
+# Abrir documento palabras comunes
+# Comparar
 
 # Lista palabras comunes
-comunes = ["bebé", "niño", "niña", "anciano", "anciana", "don", "doña"]
+comunes = []
 
 listaFinal = []
-# Leer un documento en todas las lineas
+#Leer un documento en todas las lineas
 with open("source\prueba.txt", "r", encoding="utf-8") as f:
     # Lista de palabras extraidas del documento
     lista0 = [linea.strip() for linea in f]
     for line in f:
         lista0.append(line.split())
-        
-print(lista0)
+f.close()
+with open("source\palabrasComunes.txt", "r", encoding="utf-8") as f2:
+    # Lista de palabras extraidas del documento
+    lista3 = [linea.strip() for linea in f2]
+    for line in f2:
+        print(line)
+        lista3.append(line.split())
+f2.close()
+print("Palabras comunes: ", lista3)
 # Lista con otras listas por linea de palabras en el documento
 lista1 = []
 
@@ -37,7 +45,7 @@ for elements in range(len(lista1)):
         # Crear un bucle de comprobacion
         # Si la palabra esta en la lista "comunes", entonces ignorar, sino añadir a la lista final
         # print(lista1[lts][ent])
-        if lista1[lts][ent].lower().strip(",") in comunes:
+        if lista1[lts][ent].lower().strip(",") in lista3:
             print("Palabra repetida" + " " + lista1[lts][ent].lower())
         else:
             listaFinal.append(lista1[lts][ent])
