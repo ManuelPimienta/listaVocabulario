@@ -1,13 +1,9 @@
 # Programa para crear una lista de palabras desconocidas
 
-### TO-DO
-# Abrir documento palabras comunes
-# Comparar
-
 # Lista palabras comunes
 comunes = []
-
 listaFinal = []
+
 #Leer un documento en todas las lineas
 with open("source\prueba.txt", "r", encoding="utf-8") as f:
     # Lista de palabras extraidas del documento
@@ -15,6 +11,7 @@ with open("source\prueba.txt", "r", encoding="utf-8") as f:
     for line in f:
         lista0.append(line.split())
 f.close()
+
 with open("source\palabrasComunes.txt", "r", encoding="utf-8") as f2:
     # Lista de palabras extraidas del documento
     lista3 = [linea.strip() for linea in f2]
@@ -23,6 +20,8 @@ with open("source\palabrasComunes.txt", "r", encoding="utf-8") as f2:
         lista3.append(line.split())
 f2.close()
 print("Palabras comunes: ", lista3)
+
+
 # Lista con otras listas por linea de palabras en el documento
 lista1 = []
 
@@ -36,6 +35,7 @@ print(lista1)
 # Esto itera sobre la lesta dentro de la otra e imprime todas la palabras
 # for i in range(len(lista1[0])):
 #     print(lista1[0][i])
+
 # Iterar en cada lista dentro de la lista mayor.
 for elements in range(len(lista1)):
     lts = int(elements)

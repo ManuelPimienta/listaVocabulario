@@ -3,6 +3,7 @@ Script para crear una lista de palabras a partir de un documento.
 
 ## TO-DO
 Muchas palabras conocidas en la salida final
+Disminuir el toral con una expresión regular que ignore las palabras en plural
 
 Esquemas - pseudo-código
 
